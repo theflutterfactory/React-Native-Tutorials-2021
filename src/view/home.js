@@ -11,8 +11,11 @@ export default Home = () =>
         />
         <Title>Cheeatah Coding 2021</Title>
         <ContentText>
-            This is the master branch. As you can you, there's not much here.
-            This branch uses Styled Components. Styled Components is a very useful tool to add to your toolbox.
-            If you're not familiar with that library, checkout the Styled Components video on the channel.
+            This is the master branch. As you can see, there's not much here.
+            This branch uses two libraries that will be used in all future videos.{"\n"}{"\n"}
+            - React Navigation{"\n"}
+            - Styled Components{"\n"}{"\n"}
+            If you're not familiar with either of these powerful packages, checkout the React Navigation
+            and Styled Components videos I uploaded on the channel.
         </ContentText>
     </Container>
