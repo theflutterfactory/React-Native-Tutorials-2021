@@ -18,10 +18,10 @@ const ButtonText = styled.Text`
 `
 
 export const CheeatahButton = ({ onPress, title, fontSize, width }) =>
-    <RoundedTouchableOpacity
-        onPress={onPress}
-        width={width}
-        activeOpacity={0.5}
-    >
-        <ButtonText size={fontSize}>{title}</ButtonText>
-    </RoundedTouchableOpacity>
+	<RoundedTouchableOpacity
+		onPress={onPress}
+		width={width}
+		activeOpacity={0.5}
+	>
+		<ButtonText size={fontSize}>{title}</ButtonText>
+	</RoundedTouchableOpacity>
