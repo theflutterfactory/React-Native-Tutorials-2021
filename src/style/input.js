@@ -9,9 +9,10 @@ export const CheetahInput = styled.TextInput.attrs(props => ({
   font-size: 18px;
   background-color: ${props => props.theme.colors.input || 'black'};
   color: ${props => props.theme.colors.textDark || 'black'};
-  width: 90%;
+  width: 100%;
   height: 60px;
-  margin: 16px;
+  margin-top: 24px;
+	border-radius: 10px;
   box-shadow: 3px 2px 5px #a6a6a6;
   padding: 16px;
 `

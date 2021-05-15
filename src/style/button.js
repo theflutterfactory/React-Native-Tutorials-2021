@@ -2,14 +2,14 @@ import styled from 'styled-components'
 import React from 'react';
 
 const RoundedTouchableOpacity = styled.TouchableOpacity`
-  height: 60px;
-  border-bottom-left-radius: 30px;
-  border-top-right-radius: 30px;
-  width: ${props => props.width || '180px'};
+  height: 48px;
+  width: ${props => props.width || '100%'};
   justify-content: center;
+	border-radius: 10px;
   align-items: center;
   background-color: ${props => props.theme.colors.button || 'red'};
-  margin-top: 16px;
+  margin-top: 24px;
+	box-shadow: 3px 2px 5px #a6a6a6;
 `
 
 const ButtonText = styled.Text`
@@ -21,7 +21,6 @@ export const CheeatahButton = ({ onPress, title, fontSize, width }) =>
 	<RoundedTouchableOpacity
 		onPress={onPress}
 		width={width}
-		activeOpacity={0.5}
 	>
 		<ButtonText size={fontSize}>{title}</ButtonText>
 	</RoundedTouchableOpacity>
