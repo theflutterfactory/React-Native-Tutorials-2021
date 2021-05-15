@@ -22,7 +22,7 @@ export default App = () =>
     <NavigationContainer>
       <Stack.Navigator
         screenOptions={{
-          cardStyle: { backgroundColor: theme.colors.dark }
+          cardStyle: { backgroundColor: theme.colors.light }
         }}>
         <Stack.Screen
           name="Cheeatah Coding"
