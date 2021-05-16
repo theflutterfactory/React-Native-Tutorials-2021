@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 
-import { Title, CheeatahListText } from '../style/text';
+import { Title } from '../style/text';
 import { Container, RowContainer } from '../style/container';
 import { CheetahInput } from '../style/input';
 import { CheeatahButton } from '../style/button';
-import { FlatList } from 'react-native';
-import { ListSeparator } from '../style/separator';
 
 export default Home = ({ navigation }) => {
 
@@ -15,11 +13,6 @@ export default Home = ({ navigation }) => {
 
 	addHero = () => {
 		setHeroList(list => [...list, { name, power, id: Math.random() }])
-	}
-
-	deleteHero = (id) => {
-		let filteredHeroes = superheroList.filter(hero => hero.id !== id)
-		setHeroList(filteredHeroes)
 	}
 
 	return (
