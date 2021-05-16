@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import React from 'react';
 import { Pressable } from 'react-native';
+import { useTheme } from '@react-navigation/native';
 
 export const Title = styled.Text`
   font-size: 36px;
@@ -21,20 +22,24 @@ export const DescriptionText = styled.Text`
   color: ${props => props.color || 'white'};
 `
 
-export const CheeatahListText = ({ onPress, onLongPress, content, description }) =>
-	<Pressable
-		onPress={onPress}
-		onLongPress={onLongPress}
-		style={({ pressed }) => [
-			{
-				backgroundColor: pressed ? 'red' : '#707070',
-				paddingLeft: 16,
-				paddingVertical: 16,
-				alignContent: 'center',
-				justifyContent: 'center'
-			}
-		]}
-	>
-		<ContentText>{content}</ContentText>
-		<DescriptionText>{description}</DescriptionText>
-	</Pressable >
+export const CheeatahListText = ({ onPress, onLongPress, content, description }) => {
+	const theme = useTheme();
+	return (
+		<Pressable
+			onPress={onPress}
+			onLongPress={onLongPress}
+			style={({ pressed }) => [
+				{
+					backgroundColor: pressed ? theme.colors.button : '#707070',
+					paddingLeft: 16,
+					paddingVertical: 16,
+					alignContent: 'center',
+					justifyContent: 'center'
+				}
+			]}
+		>
+			<ContentText>{content}</ContentText>
+			<DescriptionText>{description}</DescriptionText>
+		</Pressable >
+	)
+}

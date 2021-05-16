@@ -1,7 +1,8 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import Home from './src/view/home'
+import Home from './src/view/Home';
+import ListScreen from './src/view/ListScreen';
 import { ThemeProvider } from 'styled-components';
 
 const Stack = createStackNavigator();
@@ -19,7 +20,7 @@ const theme = {
 
 export default App = () =>
 	<ThemeProvider theme={theme}>
-		<NavigationContainer>
+		<NavigationContainer theme={theme}>
 			<Stack.Navigator
 				screenOptions={{
 					cardStyle: { backgroundColor: theme.colors.light }
@@ -27,6 +28,14 @@ export default App = () =>
 				<Stack.Screen
 					name="Cheeatah Coding"
 					component={Home}
+					options={{
+						headerTintColor: theme.colors.textLight,
+						headerStyle: { backgroundColor: theme.colors.dark },
+					}}
+				/>
+				<Stack.Screen
+					name="List"
+					component={ListScreen}
 					options={{
 						headerTintColor: theme.colors.textLight,
 						headerStyle: { backgroundColor: theme.colors.dark }

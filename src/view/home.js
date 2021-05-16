@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 
 import { Title, CheeatahListText } from '../style/text';
-import { Container } from '../style/container';
+import { Container, RowContainer } from '../style/container';
 import { CheetahInput } from '../style/input';
 import { CheeatahButton } from '../style/button';
 import { FlatList } from 'react-native';
 import { ListSeparator } from '../style/separator';
 
-export default Home = () => {
+export default Home = ({ navigation }) => {
 
 	const [superheroList, setHeroList] = useState([]);
 	const [name, setName] = useState('');
@@ -33,23 +33,19 @@ export default Home = () => {
 				hint='Power'
 				onChangeText={text => setPower(text)}
 			/>
-			<CheeatahButton
-				title="Add"
-				onPress={(text) => addHero(text)}
-			/>
-			<FlatList
-				data={superheroList}
-				keyExtractor={(item) => item.id}
-				style={{ width: '100%', marginTop: 20, paddingBottom: 10 }}
-				ItemSeparatorComponent={() => <ListSeparator />}
-				renderItem={({ item }) => (
-					<CheeatahListText
-						content={`Name: ${item.name}`}
-						onLongPress={() => deleteHero(item.id)}
-						description={`Power: ${item.power}`}
-					/>
-				)}
-			/>
+			<RowContainer>
+				<CheeatahButton
+					title="Add"
+					onPress={(text) => addHero(text)}
+					marginRight={12}
+				/>
+				<CheeatahButton
+					title="View List"
+					onPress={() => navigation.navigate('List', {
+						list: superheroList,
+					})}
+				/>
+			</RowContainer>
 		</Container>
 	);
 }
