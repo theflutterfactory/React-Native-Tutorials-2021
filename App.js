@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import Home from './src/view/Home';
+import Home from './src/view/home';
 import ListScreen from './src/view/ListScreen';
 import { ThemeProvider } from 'styled-components';
 
